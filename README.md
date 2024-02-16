@@ -1,4 +1,4 @@
-This package bundles lua scripts into a single file using the require statement. It is intended to make writing scripts for Ardupilot more modular.
+This script bundles lua scripts into a single file using the require statement. It is intended to make writing scripts for Ardupilot more modular.
 
 It is inspired by this Stack Overflow answer: https://stackoverflow.com/a/58776273
 
@@ -6,11 +6,9 @@ It is inspired by this Stack Overflow answer: https://stackoverflow.com/a/587762
 usage: 
 
 `lua_bundler source.lua target.lua`
-
-where: 
 - source.lua is the entrypoint of the script
 - target.lua is the place to save the bundled scripts
--optional -w or --workdir is the top level folder containing all the modules, if not provided then parent folder of source.lua is used.
+- optional -w or --workdir is the top level folder containing all the modules, if not provided then parent folder of source.lua is used.
 
 
 To import a file:
