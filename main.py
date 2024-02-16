@@ -53,5 +53,8 @@ def parse(source, workdir):
 
 def bundle(source, target, workdir):
     with open(target, 'w') as f:
-        f.writelines(parse(source, workdir))
+        f.writelines(parse(
+            source, 
+            source.parent if not workdir else workdir
+        ))
     

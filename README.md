@@ -2,7 +2,6 @@ This script bundles lua scripts into a single file using the require statement. 
 
 It is inspired by this Stack Overflow answer: https://stackoverflow.com/a/58776273
 
-
 usage: 
 
 `lua_bundler source.lua target.lua`
