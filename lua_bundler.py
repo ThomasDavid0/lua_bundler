@@ -1,5 +1,15 @@
 import re
 
+bundle_base = [
+    'local loaded_files = {}',
+    'local files = {}',
+    'local require = function(name)',
+    '    if loaded_files[name] == nil then',
+    '        loaded_files[name] = files[name]()',
+    '    end',
+    '    return loaded_files[name]',
+    'end'
+]
 
 def parse(source, workdir):
 
@@ -36,8 +46,7 @@ def parse(source, workdir):
         
         return source_lines
 
-    with open('bundle_base.lua', 'r') as f:
-        output = f.readlines()
+    output = bundle_base
         
     original_lines = parse_file(source)
 

@@ -1,5 +1,5 @@
 
-from main import parse
+from lua_bundler import parse
 from pathlib import Path
 import os
 import subprocess
