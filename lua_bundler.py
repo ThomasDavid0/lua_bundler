@@ -1,14 +1,14 @@
 import re
 
 bundle_base = [
-    'local loaded_files = {}',
-    'local files = {}',
-    'local require = function(name)',
-    '    if loaded_files[name] == nil then',
-    '        loaded_files[name] = files[name]()',
-    '    end',
-    '    return loaded_files[name]',
-    'end'
+    'local loaded_files = {}\n',
+    'local files = {}\n',
+    'local require = function(name)\n',
+    '    if loaded_files[name] == nil then\n',
+    '        loaded_files[name] = files[name]()\n',
+    '    end\n',
+    '    return loaded_files[name]\n',
+    'end\n',
 ]
 
 def parse(source, workdir):
