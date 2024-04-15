@@ -66,4 +66,25 @@ def bundle(source, target, workdir):
             source, 
             source.parent if not workdir else workdir
         ))
-    
+
+if __name__=="__main__":
+    import argparse
+    from pathlib import Path
+    from lua_bundler import bundle
+
+    parser = argparse.ArgumentParser(
+        prog = 'LUABundle',
+        description='Bundle LUA Scripts for ArduPilot'
+    )
+
+    parser.add_argument('-s', '--source', type=Path, help='Entry point LUA file')
+    parser.add_argument('-t', '--target', type=Path, help='Target LUA file to write bundle to')
+    parser.add_argument('-w', '--workdir', required=False, type=Path, help='folder for lua files, defaults to parent folder of entry point')
+
+    args = parser.parse_args()
+    print(args)
+    if not args.source or not args.target:
+        parser.print_help()
+        exit()
+
+    bundle(args.source, args.target, args.workdir)
