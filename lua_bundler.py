@@ -77,8 +77,8 @@ if __name__=="__main__":
         description='Bundle LUA Scripts for ArduPilot'
     )
 
-    parser.add_argument('-s', '--source', type=Path, help='Entry point LUA file')
-    parser.add_argument('-t', '--target', type=Path, help='Target LUA file to write bundle to')
+    parser.add_argument('source', type=Path, help='Entry point LUA file')
+    parser.add_argument('target', type=Path, help='Target LUA file to write bundle to')
     parser.add_argument('-w', '--workdir', required=False, type=Path, help='folder for lua files, defaults to parent folder of entry point')
 
     args = parser.parse_args()
